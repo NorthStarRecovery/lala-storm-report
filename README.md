@@ -12,7 +12,7 @@ Executive General Adjusters working the event.
 | File | What it is |
 | --- | --- |
 | `index.html` | The report. Single self-contained file — fonts, charts, map, and imagery are embedded, so it makes no external requests and works offline. |
-| `NorthStar-Lala-Ops-BD-Report.pdf` | 34-page print edition. Bookmarked outline, clickable contents, live source links, landscape pages for the wide matrices. |
+| `NorthStar-Lala-Ops-BD-Report.pdf` | 31-page landscape edition, sized for on-screen reading. Bookmarked outline, clickable contents, live source links. |
 
 ## How to read it
 
@@ -30,3 +30,4 @@ This is situational intelligence — not a coverage determination, engineering a
 No third-party photography is embedded. The cover visual and island relief tiles are illustrative
 renderings, not satellite, survey, or event imagery. Verified damage photographs are listed in the
 report's imagery registry with credits, license classes, and links to their original publication.
+

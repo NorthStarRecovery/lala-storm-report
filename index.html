@@ -296,17 +296,27 @@ td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-spac
 }
 
 /* ---------- print / PDF ---------- */
-@page{size:Letter portrait;margin:13mm 11mm}
-@page wide{size:Letter landscape;margin:11mm}
+@page{size:Letter landscape;margin:10mm 11mm}
 @media print{
-  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:10.5pt}
-  .wrap{max-width:100%;padding:0 4mm}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:100%;padding:0 3mm}
+
+  /* landscape is wide enough to keep the designed multi-column layouts */
+  .tldr-grid{grid-template-columns:1.25fr .9fr}
+  .grid-2{grid-template-columns:1fr 1fr}
+  .grid-2-13{grid-template-columns:1fr 1.6fr}
+  .island-grid{grid-template-columns:1fr 1fr}
+  .tiles{grid-template-columns:repeat(4,1fr)}
+  .kpi-rail{grid-template-columns:repeat(6,1fr)}
+  .info-strip{grid-template-columns:repeat(3,1fr)}
+  .footer .cols{grid-template-columns:1.4fr 1fr 1fr}
+  .cta-inner{flex-wrap:nowrap}
   #ns-tip{display:none!important}
   a{text-decoration:none}
 
   /* one section per page group, never split a component */
-  .cover{break-after:page;min-height:96vh}
-  .cover-inner{padding:26px 0 20px;min-height:96vh;justify-content:center}
+  .cover{break-after:page;min-height:calc(100vh - 21mm);overflow:hidden}
+  .cover-inner{padding:12px 0 8px;min-height:auto;justify-content:center;gap:24px}
   .section{padding:20px 0 14px;break-before:page;break-inside:auto}
   .section+.section{border-top:none}
   .card,.tile,.island,.chart-block,.diagram-block,.map-block,.alert,.kpi,.tl-item,
@@ -316,8 +326,8 @@ td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-spac
   .chart-head,.section-head{break-after:avoid}
   h2,h3,.h2,.h3,.h4{break-after:avoid}
 
-  /* wide matrices get their own landscape pages */
-  .land{page:wide}
+  /* every page is landscape now — no named-page break needed */
+  .land{page:auto}
 
   /* trim interactive-only affordances */
   .chart-svg{max-height:none}
